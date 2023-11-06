@@ -4,6 +4,7 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.services.simpleemail.AmazonSimpleEmailService;
 import com.amazonaws.services.simpleemail.model.*;
 import dev.ironia.ubmailsender.adapters.EmailSenderGateway;
+import dev.ironia.ubmailsender.core.exceptions.EmailServiceException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -31,7 +32,7 @@ public class SESEmailSender implements EmailSenderGateway {
         try {
             this.amazonSimpleEmailService.sendEmail(request);
         }catch (AmazonServiceException exception) {
-            throw new EmailServiceException("Failure while sending email");
+            throw new EmailServiceException("Failure while sending email", exception);
         }
     }
 }
