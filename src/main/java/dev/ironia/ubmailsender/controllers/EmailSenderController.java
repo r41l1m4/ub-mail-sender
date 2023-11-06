@@ -1,6 +1,7 @@
 package dev.ironia.ubmailsender.controllers;
 
 import dev.ironia.ubmailsender.application.EmailSenderService;
+import dev.ironia.ubmailsender.core.EmailRequest;
 import dev.ironia.ubmailsender.core.exceptions.EmailServiceException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
