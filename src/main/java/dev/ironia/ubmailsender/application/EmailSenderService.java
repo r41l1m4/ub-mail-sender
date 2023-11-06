@@ -3,7 +3,9 @@ package dev.ironia.ubmailsender.application;
 
 import dev.ironia.ubmailsender.adapters.EmailSenderGateway;
 import dev.ironia.ubmailsender.core.EmailSenderUseCase;
+import org.springframework.stereotype.Service;
 
+@Service
 public class EmailSenderService implements EmailSenderUseCase {
 
     private final EmailSenderGateway emailSenderGateway;
